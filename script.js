@@ -13,7 +13,7 @@ toggle.addEventListener("click", () => {
     menuIcon.classList.toggle("fa-times", isOpen);
 
     // Hide logo when open
-    logo.style.opacity = isOpen ? "0" : "1";
+    //logo.style.opacity = isOpen ? "0" : "1";
 });
 
 // Close when clicking outside menu (overlay)
