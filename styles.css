@@ -167,7 +167,6 @@ main {
     color: var(--text-color);
     background-color: var(--secondary-color);
     transition: background-color 0.2s ease;
-    border-bottom: 2px solid transparent;
 }
 
 .activeLink {
@@ -283,6 +282,13 @@ main {
     }
 
     /* DESKTOP NAV */
+    .main-nav ul li a.activeLink {
+        color: var(--text-color);
+        background-color: var(--secondary-color);
+        border-bottom: 2px solid var(--text-color);
+        border-top: none;
+    }
+
     .main-nav {
         position: static;
         display: flex;
@@ -321,13 +327,6 @@ main {
         text-decoration: none;
         background-color: var(--secondary-color);
         transition: background-color 0.2s ease;
-        border-bottom: 2px solid var(--text-color);
-        border-top: none;
-    }
-
-    .activeLink {
-        color: var(--text-color);
-        background-color: var(--secondary-color);
         border-bottom: 2px solid var(--text-color);
         border-top: none;
     }
