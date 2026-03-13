@@ -9,11 +9,24 @@
 }
 *::-webkit-scrollbar { display: none; }
 
+:root {
+    --text-color: #151515;
+    --primary-color: #e7e7e7;
+    --secondary-color: rgba(150, 150, 150, 0.1);
+}
+
+html {
+    height: 100%; /* Ensure html and body take full height */
+    margin: 0;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: rgb(242, 242, 242);
-    color: #333;
+    background: var(--primary-color);
+    color: var(--text-color);
     overflow-wrap: break-word;
+    height: 100%;
+    margin: 0;
 }
 
 /* OVERLAY */
@@ -26,11 +39,6 @@ body.menu-open::after {
     pointer-events: all;
 }
 body::after { pointer-events: none; }
-
-html, body {
-    height: 100%; /* Ensure html and body take full height */
-    margin: 0;
-}
 
 .wrapper {
     display: flex;
@@ -46,8 +54,8 @@ main {
 /* HEADER */
 .main-header {
     width: 100%;
-    background: #ededed;
-    color: #121212;
+    background: var(--primary-color);
+    color: var(--text-color);
     padding: 0 18px;
     display: grid;
     grid-template-columns: 1fr auto;
@@ -82,7 +90,7 @@ main {
 /* FOOTER */
 .main-footer {
     width: 100%;
-    background: #202020;
+    background-color: rgba(30, 30, 30, 1);
     color: #f1f1f1;
     text-align: center;
     padding: 10px 30px;
@@ -93,16 +101,12 @@ main {
 }
 
 /* SOCIAL ICONS — MOBILE DEFAULTS */
-.social-icons { display: flex; gap: 15px; align-items: center; }
+.social-icons { display: flex; gap: 15px; align-items: center; padding: 10px}
 .socialLogo { display: block; height: 50px; width: auto;}
 
 /* BANNER — MOBILE HIDDEN */
 .banner {
     display: none;
-    width: 100%;
-    background: #ffffff;
-    overflow: hidden;
-    border-bottom: 2px solid #121212;
 }
 
 /* NAVIGATION (mobile dropdown) */
@@ -111,7 +115,7 @@ main {
     top: 100%;
     left: 0;
     right: 0;
-    background: #ededed;
+    background: var(--primary-color);
     transform: translateY(-20px);
     opacity: 0;
     pointer-events: none;
@@ -129,32 +133,29 @@ main {
     padding: 10px 0;
 }
 .main-nav ul li a {
-    color: #121212;
+    color: var(--text-color);
     text-decoration: none;
     padding: 15px 20px;
     display: block;
     font-weight: bold;
     font-size: 1.1rem;
-    border-bottom: 2px solid transparent;
 }
 .main-nav ul li a:hover {
-    background: transparent;
-    color: #121212;
-    border-bottom: 2px solid #121212;
-    background-color: rgba(20,20,20,0.1);
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    transition: background-color 0.2s ease;
 }
 
 .activeLink {
-    border-bottom: 2px solid #121212;
-    color: #121212;
-    background-color: rgba(20,20,20,0.1);
+    color: var(--text-color);
+    background-color: var(--secondary-color);
 }
 
 /* HAMBURGER */
 .menu-toggle {
     background: none;
     border: none;
-    color: #121212;
+    color: var(--text-color);
     font-size: 28px;
     cursor: pointer;
     z-index: 2000;
@@ -163,12 +164,12 @@ main {
 
 /* INFO SECTION */
 .info-section {
-    background: rgb(242, 242, 242);
+    background: var(--primary-color);
     padding: 20px;
     text-align: center;
 }
-.info-title { font-size: 1.8rem; margin-bottom: 10px; color: #121212; }
-.info-section p { font-size: 1.2rem; color: #121212; }
+.info-title { font-size: 1.8rem; margin-bottom: 10px; color: var(--text-color); }
+.info-section p { font-size: 1.2rem; color: var(--text-color); }
 
 /* MOBILE LAYOUT */
 .info-grid {
@@ -185,22 +186,22 @@ main {
     margin: 0 auto;
     border-radius: 10px;
     overflow: hidden;
-    height: 400px;
+    height: 450px;
 }
 
 .info-card {
-    background: #e8e8e8;
+    background-color: var(--secondary-color);
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     display: flex;
-    height: 400px;
+    height: 450px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .info-card h3 { margin-bottom: 15px; font-size: 1.5rem; text-align: center; }
 .info-card p { margin: 4px 0; font-size: 1.1rem; text-align: center; }
-.info-card a { color: #121212; font-weight: bold; text-decoration: none; }
+.info-card a { color: var(--text-color); font-weight: bold; text-decoration: none; }
 .info-card a:hover { text-decoration: underline; }
 
 .info-map iframe {
@@ -253,11 +254,11 @@ main {
         white-space: nowrap;
     }
     .main-nav ul li a:hover {
-        background: transparent;
-        color: #121212;
-        border-bottom: 2px solid #121212;
+        color: var(--text-color);
         transform: none;
         text-decoration: none;
+        background-color: var(--secondary-color);
+        transition: background-color 0.2s ease;
     }
 
     /* DESKTOP SOCIAL ICONS */
@@ -271,7 +272,7 @@ main {
         align-items: center;
         width: 100%;
         height: 130px;
-        background: #ffffff;
+        background-color: var(--secondary-color);
     }
     .banner-img {
         width: 100%;
