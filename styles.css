@@ -307,6 +307,42 @@ main {
     text-align: center;
 }
 
+/* STAFF SECTION — MOBILE FIRST */
+.staff-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.staff-card {
+    background-color: var(--secondary-color);
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.staff-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.staff-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.staff-card p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+
 /* DESKTOP */
 @media (min-width: 1080px) {
 
@@ -444,4 +480,22 @@ main {
         width: 30vw;
         margin: auto;
     }
+
+        /* STAFF SECTION — DESKTOP */
+    .staff-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        padding: 40px 20px;
+    }
+
+    .staff-card {
+        padding: 10px;
+    }
+
+    .staff-card img {
+        height: 350px;
+        object-fit: cover;
+    }
+
 }
