@@ -27,6 +27,7 @@ html {
     height: 100%;
     /* Ensure html and body take full height */
     margin: 0;
+    
 }
 
 body {
@@ -145,7 +146,7 @@ main {
     transform: translateY(-20px);
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.1s ease, opacity 0.1s ease-out;
+    transition: transform 0.3s ease;
 }
 
 .main-nav.nav-active {
@@ -278,6 +279,34 @@ main {
     border: none;
 }
 
+/*Info card About us */
+.info-card-about {
+    background-color: var(--secondary-color);
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.info-card-about ul {
+    list-style-type: disc;
+    text-align: center;
+}
+
+.info-card-about ul li {
+    margin: 5px 0;
+    font-size: 1.1rem;
+}
+
+.info-card-about p {
+    margin: 4px 0;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
 /* DESKTOP */
 @media (min-width: 1080px) {
 
@@ -408,6 +437,11 @@ main {
     .info-section p {
         width: 50%;
         text-align: center;
+        margin: auto;
+    }
+
+    .info-card-about {
+        width: 30vw;
         margin: auto;
     }
 }
