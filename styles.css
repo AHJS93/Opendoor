@@ -12,6 +12,11 @@
     display: none;
 }
 
+a {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
 :root {
     --text-color: #151515;
     --primary-color: #e7e7e7;
