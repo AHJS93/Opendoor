@@ -1,61 +1,65 @@
+/* ============================================================
+   ELEMENTS
+============================================================ */
 const toggle = document.getElementById("menuToggle");
 const nav = document.getElementById("mainNav");
 const logo = document.getElementById("logo");
 const menuIcon = document.getElementById("menuIcon");
+const main = document.querySelector("main");
 
-/* -----------------------------
-   MENU TOGGLE (unchanged)
------------------------------ */
-toggle.addEventListener("click", () => {
+/* ============================================================
+   MENU HANDLING
+============================================================ */
+function openMenu() {
+    nav.classList.add("nav-active");
+    document.body.classList.add("menu-open");
+    menuIcon.classList.remove("fa-bars");
+    menuIcon.classList.add("fa-times");
+}
+
+function closeMenu() {
+    nav.classList.remove("nav-active");
+    document.body.classList.remove("menu-open");
+    menuIcon.classList.add("fa-bars");
+    menuIcon.classList.remove("fa-times");
+}
+
+function toggleMenu() {
     const isOpen = nav.classList.toggle("nav-active");
     document.body.classList.toggle("menu-open", isOpen);
 
     menuIcon.classList.toggle("fa-bars", !isOpen);
     menuIcon.classList.toggle("fa-times", isOpen);
-});
+}
 
-/* -----------------------------
-   CLOSE MENU WHEN CLICKING OUTSIDE
------------------------------ */
+/* Toggle button */
+toggle.addEventListener("click", toggleMenu);
+
+/* Close menu when clicking outside */
 document.addEventListener("click", (e) => {
-    const menuIsOpen = document.body.classList.contains("menu-open");
-    if (!menuIsOpen) return;
+    if (!document.body.classList.contains("menu-open")) return;
 
-    const clickedInsideMenu = e.target.closest(".main-nav");
+    const insideMenu = e.target.closest("#mainNav");
     const clickedToggle = e.target.closest("#menuToggle");
 
-    if (!clickedInsideMenu && !clickedToggle) {
+    if (!insideMenu && !clickedToggle) {
         closeMenu();
     }
 });
 
-function closeMenu() {
-    nav.classList.remove("nav-active");
-    document.body.classList.remove("menu-open");
-
-    menuIcon.classList.add("fa-bars");
-    menuIcon.classList.remove("fa-times");
-}
-
-/* -----------------------------
-   UPDATE ACTIVE LINK
------------------------------ */
+/* ============================================================
+   ACTIVE LINK HIGHLIGHTING
+============================================================ */
 function updateActiveLink(url) {
-    document.querySelectorAll("nav a").forEach(a => {
+    nav.querySelectorAll("a").forEach(a => {
         a.classList.toggle("activeLink", a.getAttribute("href") === url);
     });
 }
 
-/* -----------------------------
-   AJAX NAVIGATION (EVENT DELEGATION)
------------------------------ */
-nav.addEventListener("click", async (e) => {
-    const link = e.target.closest("a");
-    if (!link) return; // clicked something else
-
-    e.preventDefault();
-    const url = link.getAttribute("href");
-
+/* ============================================================
+   AJAX PAGE LOADING
+============================================================ */
+async function loadPage(url) {
     try {
         const response = await fetch(url);
         const html = await response.text();
@@ -64,17 +68,44 @@ nav.addEventListener("click", async (e) => {
         const doc = parser.parseFromString(html, "text/html");
 
         // Replace only <main>
-        document.querySelector("main").innerHTML =
-            doc.querySelector("main").innerHTML;
+        main.innerHTML = doc.querySelector("main").innerHTML;
 
         // Update URL
         history.pushState({}, "", url);
 
-        // Update active link + close menu
+        // Update nav state
         updateActiveLink(url);
         closeMenu();
+
+        // Re-bind nav links (important for mobile)
+        bindNavLinks();
 
     } catch (err) {
         console.error("Navigation error:", err);
     }
+}
+
+/* ============================================================
+   NAV LINK HANDLER
+============================================================ */
+function handleNavClick(e) {
+    e.preventDefault();
+    const url = this.getAttribute("href");
+    loadPage(url);
+}
+
+/* Attach listeners to all nav links */
+function bindNavLinks() {
+    nav.querySelectorAll("a").forEach(a => {
+        a.removeEventListener("click", handleNavClick);
+        a.addEventListener("click", handleNavClick);
+    });
+}
+
+/* Initial binding */
+bindNavLinks();
+
+/* Handle browser back/forward */
+window.addEventListener("popstate", () => {
+    loadPage(location.pathname);
 });
