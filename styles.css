@@ -6,6 +6,7 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
     font-family: Lexend;
+    font-weight: 400;
 }
 
 *::-webkit-scrollbar {
@@ -20,7 +21,7 @@ a {
 :root {
     --text-color: #151515;
     --primary-color: #f1f1f1;
-    --secondary-color: rgba(191, 191, 191, 0.1);
+    --secondary-color: rgba(202, 200, 200, 0.1);
 }
 
 html {
@@ -166,7 +167,7 @@ main {
     text-decoration: none;
     padding: 15px 20px;
     display: block;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 1.1rem;
 }
 
