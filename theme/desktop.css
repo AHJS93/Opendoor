@@ -210,5 +210,16 @@
     .ministry-content h2 {
         font-size: 1.6rem;
     }
+
+    .ministry-card-groups {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 20px;
+        height: 400px;
+        align-items: center;
+        width: fit-content;
+        margin: 0;
+    }
     
 }
