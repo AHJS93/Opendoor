@@ -1,0 +1,346 @@
+/* HEADER */
+.main-header {
+    width: 100%;
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 0px 18px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    height: 64px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-left,
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: opacity 0.1s ease;
+}
+
+.logo-img {
+    height: 55px;
+    width: auto;
+    margin-top: 4px;
+}
+
+/* FOOTER */
+.main-footer {
+    width: 100%;
+    background-color: rgba(30, 30, 30, 1);
+    color: #f1f1f1;
+    text-align: center;
+    padding: 10px 30px;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 10px;
+}
+
+.socialLogo {
+    display: block;
+    height: 50px;
+    width: auto;
+}
+
+/* BANNER (mobile hidden) */
+.banner {
+    display: none;
+    background-color: var(--secondary-color);
+}
+
+/* NAVIGATION (mobile dropdown) */
+.main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--primary-color);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.main-nav.nav-active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.main-nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.main-nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    font-weight: normal;
+    font-size: 1.1rem;
+}
+
+.main-nav ul li a:hover {
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    transition: background-color 0.2s ease;
+}
+
+.activeLink {
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    border-top: 2px solid var(--text-color);
+    border-bottom: 2px solid var(--text-color);
+}
+
+/* HAMBURGER */
+.menu-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 2000;
+    position: relative;
+}
+
+/* INFO SECTION */
+.info-section {
+    background: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+}
+
+.info-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.info-section p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+/* MOBILE GRID */
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* CARD + MAP (merged base) */
+.info-card,
+.info-map {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 400px;
+}
+
+.info-card {
+    background-color: var(--secondary-color);
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.info-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.info-card p {
+    margin: 4px 0;
+    font-size: 1.1rem;
+}
+
+.info-card hr {
+    border: 1px solid var(--text-color);
+    width: 60%;
+    margin: 10px auto;
+}
+
+.info-card a {
+    color: var(--text-color);
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.info-card a:hover {
+    text-decoration: underline;
+}
+
+.info-card ul {
+    list-style-type: disc;
+    text-align: center;
+}
+
+.info-card ul li {
+    margin: 5px 0;
+    font-size: 1.1rem;
+}
+
+.info-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ABOUT CARD (merged base) */
+.info-card-about {
+    background-color: var(--secondary-color);
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.info-section-about {
+    background: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+}
+
+.info-card-about ul {
+    list-style-type: disc;
+    text-align: center;
+}
+
+.info-card-about ul li {
+    margin: 5px 0;
+    font-size: 1.1rem;
+}
+
+.info-card-about p {
+    margin: 4px 0;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* STAFF SECTION */
+.staff-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.staff-card {
+    background-color: var(--secondary-color);
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.staff-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.staff-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.staff-card p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* MINISTRIES */
+.ministries {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px 0;
+    align-items: center;
+}
+
+.ministry-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 80%;
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 10px;
+    height: fit-content;
+}
+
+.ministry-card img {
+    width: 200px;
+    max-width: 100%;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.ministry-content {
+    flex: 1;
+    min-width: 250px;
+    width: 500px;
+    text-align: center;
+}
+
+.ministry-content h2 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+/* SECTION DIVIDER */
+.section-divider {
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--accent), transparent);
+    margin: 40px auto;
+    border-radius: 2px;
+}
+
+/* INTERNAL DIVIDERS */
+.ministry-content hr,
+.info-card hr {
+    border: none;
+    height: 1px;
+    background: var(--accent-light);
+    width: 70%;
+    margin: 12px auto;
+}
