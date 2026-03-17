@@ -217,7 +217,7 @@ main {
 .info-grid {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
 }
 
 /* CARD + MAP */
@@ -463,7 +463,7 @@ main {
     .info-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 60px;
+        gap: 20px;
         max-width: 1080px;
         margin: 0 auto;
         align-items: center;
