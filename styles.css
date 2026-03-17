@@ -256,7 +256,7 @@ main {
 
 .info-card hr {
     border: 1px solid var(--text-color);
-    width: 90%;
+    width: 80%;
 }
 
 .info-card a {
