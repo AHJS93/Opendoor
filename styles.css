@@ -228,7 +228,7 @@ main {
     margin: 0 auto;
     border-radius: 10px;
     overflow: hidden;
-    height: 450px;
+    height: 350px;
 }
 
 .info-card {
@@ -236,7 +236,7 @@ main {
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
-    height: 450px;
+    height: 350px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -254,10 +254,16 @@ main {
     text-align: center;
 }
 
+.info-card hr {
+    border: 1px solid var(--text-color);
+    width: 90%;
+}
+
 .info-card a {
     color: var(--text-color);
     font-weight: bold;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .info-card a:hover {
