@@ -203,8 +203,23 @@
         margin: 0;
     }
 
+    .ministry-card-groups {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 20px;
+        min-height: 500px;
+        align-items: center;
+        width: 500px;
+        margin: 0;
+    }
+
     .ministry-content {
         width: 500px;
+    }
+
+    .ministry-content p {
+        font-size: 1.2rem;
     }
 
     .ministry-content h2 {

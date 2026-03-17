@@ -333,6 +333,10 @@
     font-size: 2rem;
 }
 
+.ministry-content p {
+    font-size: 1.1rem;
+}
+
 .ministry-card-groups {
     display: flex;
     align-items: center;
