@@ -112,7 +112,7 @@ main {
     color: #f1f1f1;
     text-align: center;
     padding: 10px 30px;
-    position: sticky;
+    position: relative;
     bottom: 0;
     display: flex;
     justify-content: center;
