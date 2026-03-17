@@ -141,6 +141,11 @@
     color: var(--text-color);
 }
 
+.info-section-about p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
 /* MOBILE GRID */
 .info-grid {
     display: flex;
@@ -321,7 +326,7 @@
     text-align: center;
 }
 
-.ministry-content h2 {
+.ministry-content h1 {
     margin-top: 0;
     font-size: 2rem;
 }
@@ -337,9 +342,10 @@
 
 /* INTERNAL DIVIDERS */
 .ministry-content hr,
-.info-card hr {
+.info-card hr,
+.staff-card hr {
     border: none;
-    height: 1px;
+    height: 2px;
     background: var(--accent-light);
     width: 70%;
     margin: 12px auto;

@@ -20,7 +20,7 @@ a {
 :root {
     --text-color: #151515;
     --primary-color: #e7e7e7;
-    --secondary-color: rgba(249, 249, 249, 0.5);
+    --secondary-color: rgba(249, 249, 249, 0.3);
     --accent: #94bbff;
     --accent-light: rgba(138, 180, 248, 0.08);
 }
