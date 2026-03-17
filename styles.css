@@ -14,21 +14,21 @@
 }
 
 a {
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 
 :root {
     --text-color: #151515;
-    --primary-color: #f1f1f1;
-    --secondary-color: rgba(202, 200, 200, 0.1);
+    --primary-color: #f3f3f3;
+    --secondary-color: rgba(236, 236, 236, 0.5);
 }
 
 html {
     height: 100%;
     /* Ensure html and body take full height */
     margin: 0;
-    
+
 }
 
 body {
@@ -328,7 +328,7 @@ main {
     background-color: var(--secondary-color);
     padding: 10px;
     border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
@@ -350,6 +350,54 @@ main {
     font-style: italic;
 }
 
+/*kids corner*/
+/*----------*/
+.ministries {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px 0;
+    align-items: center;
+}
+
+/* Each card */
+.ministry-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 80%;
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 10px;
+    height: fit-content;
+}
+
+/* Images */
+.ministry-card img {
+    width: 200px;
+    max-width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+/* Text */
+.ministry-content {
+    flex: 1;
+    min-width: 250px;
+    width: 500px;
+    text-align: center;
+}
+
+.ministry-content h2 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+/*kidz corner finished*/
 
 /* DESKTOP */
 @media (min-width: 1080px) {
@@ -489,7 +537,7 @@ main {
         margin: auto;
     }
 
-        /* STAFF SECTION — DESKTOP */
+    /* STAFF SECTION — DESKTOP */
     .staff-section {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -504,6 +552,36 @@ main {
     .staff-card img {
         height: 350px;
         object-fit: cover;
+    }
+
+    .ministries {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .ministry-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 20px;
+        height: 650px;
+        align-items: center;
+        width: fit-content;
+        margin: 0;
+        /* FIXED */
+    }
+
+
+    .ministry-content {
+        width: 500px;
+    }
+
+    .ministry-content h2 {
+        font-size: 1.6rem;
     }
 
 }
